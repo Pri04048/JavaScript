@@ -24,4 +24,4 @@ let alt = 3
 let larg = 5
 
 let area = alt * larg 
-console.log(area)
+console.log(tutu)
