@@ -16,23 +16,60 @@ console.log("adicionado na lista")
 cores.push("verde")
 console.log(cores)
 
-// //8 
-// let vazio = []
-// console.log("Adicione np final")
-// vazio.push("3", "2" , "1")
-// console.log(vazio)
+//ex4
+let n = ["5", "4", "3", "2"]
+for(let i = 0; i < n.length; i++) {
+    console.log(n[i])
+    
+}
+n.pop()
+console.log(n)
 
-// console.log("adicione ao inicio" )
-// vazio.unshift("4")
-// console.log(vazio)
+//ex5
+//5
+let cid = ["Madri", "Paris"]
+for(let i = 0; i < cid.length; i++) {
+    console.log(cid[i])
+}
+cid.unshift("Ibiza")
+console.log(cid)
 
-// console.log("remove o ultimo ")
-// vazio.pop()
-// console.log(vazio)
+//6
+let ani = ["cachorro", "gato", "tartaruga"]
+for(let i = 0; i < ani.length; i++) {
+    console.log(ani[i])
+    
+}
+ani.shift()
+console.log(ani)
 
-// console.log("remova o primeiro")
-// vazio.unshift()
-// console.log(vazio)
+//7
+let car = ["BMW X5", "Tesla", "Porsche 718", "Audi R8"]
+for(let i = 0; i < car.length; i++) {
+    console.log(car[i])
+}
+console.log(car)
 
-// console.log("array finally")
-//     for(let i = 0;)
+ //8 
+let vazio = []
+console.log("adiciona no final")
+vazio.push("3", "2", "1")
+console.log(vazio)
+
+console.log("adiciona no inicio")
+vazio.unshift("4")
+console.log(vazio)
+
+console.log("remove o ultimo")
+vazio.pop()
+console.log(vazio)
+
+console.log("remove o primeiro")
+vazio.shift()
+console.log(vazio)
+
+console.log("array final")
+for(let i = 0; i < vazio.length; i++) {
+    console.log(vazio[i])
+}
+console.log(vazio)
