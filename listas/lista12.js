@@ -54,9 +54,9 @@ function verificaridade (){
 console.log(verificaridade())
 
 //ex7
-let not =Number(prompt("Insira a  sua primeira  nota"))
-let not2 =Number(prompt("Insira a  sua segunda nota"))
-let not3 =Number(prompt("Insira a sua terceira nota"))
+let not = Number(prompt("Insira a  sua primeira  nota"))
+let not2 = Number(prompt("Insira a  sua segunda nota"))
+let not3 = Number(prompt("Insira a sua terceira nota"))
 let adicao = (not,not2,not3) => {
     let resultado = not + not2 +not3/3
 
