@@ -56,13 +56,11 @@ let div = document.getElementById("div")
 let bot2 = document.getElementById("bot2")
 let bot3 = document.getElementById("bot3")
 bot2.addEventListener("click" , function (){
-if(div.style.width = "200px")
-    (div.style.height = "200px")
-(div.style.backgroundColor = "pink")
+div.style.borderRadius="0px"
 })
 bot3.addEventListener("click" , function (){
-    if(div.style.borderRadius ="100px" )
-        (div.style.backgroundColor = "purple")
+   div.style.borderRadius="360px"
+   
 })
 
 
