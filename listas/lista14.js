@@ -65,6 +65,5 @@ bot3.addEventListener("click" , function (){
         (div.style.backgroundColor = "purple")
 })
 
-magem.style.width = "200px"
-    imagem.style.heigth = "200px"
+
 
