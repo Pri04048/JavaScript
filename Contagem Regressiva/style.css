@@ -1,0 +1,16 @@
+body{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: pink;
+
+}
+button{
+     padding: 10PX 20PX;
+     border-radius: 5PX;
+     background-color: palevioletred;
+}
+#contador{
+font-size: 40px;
+font-weight: bold;
+margin-top: 20px;
+}
