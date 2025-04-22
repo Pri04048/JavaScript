@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: linear-gradient(pink, plum);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .btn{
+            background-color: palevioletred;
+            font:300 30px "Arial";
+            padding: 15px 30px;
+            border-radius: 15px;
+            border:  none;
+            color: pink;
+            transition: ease-in-out 0.4s;
+            width: 200px;
+        }
+        .tituloPrincipal{
+            font: 700 40px "Arial";
+        }
+        .titulo {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .botoes{
+            display: flex;
+            justify-content: space-between;
+            margin: 0 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class=" titulo">
+        <h1 class="tituloPrincipal">Você me Ama?</h1>
+    </div>
+    <div class="botoes">
+        <div class="botaoS">
+            <button class="btn" onclick="sim()">Sim</button>
+        </div>
+        <div class="botaoN">
+            <button class="btn" id="btn" onclick="desvia()"onmouseover="desvia()">Não</button>
+        </div>
+    </div>
+    <script>
+        function sim() {
+            window.location.href = "https://www.sephora.com.br/"
+        }
+        function desvia (){
+            let btn = document.getElementById("btn")
+            btn.style.position = "absolute"
+            btn.style.bottom = geraPosicao(10,80)
+            btn.style.left = geraPosicao(10,80)
+        }
+        function geraPosicao(min, max){
+            return (Math.random() * (max - min)+min)+"%"
+        }
+    </script>
+</body>
+</html>
