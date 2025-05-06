@@ -4,9 +4,9 @@ const campoValor = document.querySelector("#valor")
 const campoTipo = document.querySelector("#tipo")
 const botaoAdicionar = document.querySelector("#botao-adicionar")
 
-const spanEntradas = document.querySelector(".valor-entrada")
+const spanEntradas = document.querySelector(".valor-entradas")
 const spanSaidas = document.querySelector(".valor-saidas")
-const spanTodal = document.querySelector(".valor-total")
+const spanTotal = document.querySelector(".valor-total")
 
 let listarItens //para listar os intens
 
@@ -59,7 +59,7 @@ function carregarItens() {
     listarItens.forEach((item, indice)=> {
         inserirItem(item, indice)
     })
-    calcularTotal ()
+    calcularTotal()
 }
 function calcularTotal(){
      let totalEntradas = 0
@@ -67,7 +67,7 @@ function calcularTotal(){
 
      listarItens.forEach((item) => {
         const valor = Number(item.valor)
-        if(item.tipo == "Entradas"){
+        if(item.tipo == "Entrada"){
             totalEntradas += valor
         } else if (item.tipo == "Saída"){
             totalSaidas += valor
@@ -77,9 +77,9 @@ function calcularTotal(){
      const totalEntradaFixado = totalEntradas.toFixed(2)
      const totalSaidaFixado = totalSaidas. toFixed(2)
      
-     spanEntradas. innerHTML = totalEntradaFixado
-     spanSaidas. innerHTML = totalSaidaFixado
-     spanTotal. innerHTML = saldoTotal
+     spanEntradas.innerHTML = totalEntradaFixado
+     spanSaidas.innerHTML = totalSaidaFixado
+     spanTotal.innerHTML = saldoTotal
 }
 const obterItensBD =() => JSON.parse(localStorage.getItem
 ("bd_itens")) ?? []
