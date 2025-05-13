@@ -1,0 +1,139 @@
+/* Importando a fonte Questrial do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+/* Resetando as configurações padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Questrial', sans-serif;
+}
+
+/* Estilizando o corpo da página */
+body {
+    background-color: rgba(80, 7, 7, 0.767);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container principal do quiz */
+.container {
+    background-color: rgba(194, 55, 55, 0.397);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(167, 20, 20, 0.1);
+    max-width: 600px;
+    width: 90%;
+}
+
+/* Estilo do título */
+h1 {
+    text-align: center;
+    color: #f0afbf;
+    margin-bottom: 2rem;
+}
+
+/* Estilo do placar */
+#placar {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #ffc5d2;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+/* Estilo dos números do placar */
+#placar span {
+    font-weight: bold;
+}
+
+/* Cor do número de acertos */
+#acertos {
+    color: #ff6088de;
+}
+#acertos1{
+    color: #ff6088de;
+}
+
+/* Cor do número de erros */
+#erros {
+    color: #c91414;
+}
+#erros1{
+    color: #c91414;
+}
+
+/* Estilo da pergunta */
+#pergunta {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #ffbfd2;
+}
+
+/* Estilo das opções de resposta */
+.opcao {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f1d0d0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(151, 27, 27);   
+    transition: all 0.3s;
+}
+
+/* Efeito quando passar o mouse sobre a opção */
+.opcao:hover {
+    background-color: #e0b5b5;
+}
+
+/* Estilo da opção selecionada */
+.opcao.selecionada {
+    background-color: #f1a8ca;
+    color: white;
+    border-color: #da545f;
+}
+
+/* Estilo dos botões */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 1rem;
+    background-color: #8f0f0f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+/* Classe para esconder elementos */
+.esconder {
+    display: none;
+}
+
+/* Estilo da tela de pontuação final */
+#pontuacao {
+    text-align: center;
+}
+
+/* Estilo do título da pontuação final */
+#pontuacao h2 {
+    color: #d80858;
+    margin-bottom: 1rem;
+}
+
+/* Estilo do texto da pontuação final */
+#pontuacao p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #444;
+} 
