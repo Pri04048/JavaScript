@@ -81,7 +81,7 @@ button:disabled {
 #reiniciar{
     background-color: #164194;
 }
-.teste {
+.nomes{
     position: fixed;
     bottom: 10px;
     left: 10px;
@@ -91,12 +91,12 @@ button:disabled {
     color: #164194;
 }
 
-.teste ul {
+.nomes ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-.teste li {
+.nomes li {
     margin-bottom: 2px;
 }
