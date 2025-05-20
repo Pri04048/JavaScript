@@ -69,7 +69,7 @@ h2{
     border-radius: 5px;
     background-color: #C1272C;
     color: white;
-    font-size: 16px;
+    font-size: 28px;
     cursor: pointer;
 }
 
@@ -80,4 +80,23 @@ button:disabled {
 
 #reiniciar{
     background-color: #164194;
+}
+.teste {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: transparent;
+    text-align: left;
+    font-size: 14px;
+    color: #164194;
+}
+
+.teste ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.teste li {
+    margin-bottom: 2px;
 }
