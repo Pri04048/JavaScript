@@ -46,17 +46,22 @@ function verificarLetra(letra, botao) {
    
     const todasDescobertas = [...palavra].every(l => letrasCorretas.includes(l));
     if (todasDescobertas) {
-      setTimeout(() => alert("Parabéns, você venceu!"), 100);
+     setTimeout(() => mostrarMensagem("Parabéns, você venceu!"), 100);
     }
   } else {
     erros++;
     imagemForca.src = `img/forca${erros}.png`;
     if (erros === 6) {
-      setTimeout(() => alert(`Você perdeu! A palavra era ${palavra}`), 100);
+     setTimeout(() => mostrarMensagem(`Você perdeu! A palavra era: ${palavra}`), 100);
     }
   }
 }
-
+ function mostrarMensagem(texto) {
+  const mensagem = document.getElementById("mensagem");
+  const textoMensagem = document.getElementById("textoMensagem");
+  textoMensagem.textContent = texto;
+  mensagem.style.display = "block";
+}
 document.getElementById("reiniciar").addEventListener("click", () => location.reload());
 
 desenharPalavra();

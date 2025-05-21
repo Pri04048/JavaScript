@@ -14,14 +14,18 @@
   <body>
     <div class="container-aplicativo">
       <div class="container-titulo">
+        <div class="logo">
+          <img src="img/mundo senai1.png" alt="">
+        </div>
+        <div class="teste">
         <h1>TecnoForca</h1>
         <h2 class="h2">Tema: Senai</h2>
-        
       </div>
       <div class="container-forca">
         <img id="imagemForca" src="img/forca0.png" alt="Forca" />
     
       </div>
+     
       <div class="container-letras"></div>
       <div class="container-teclado">
         <div class="linha-teclado" id="linhaTeclado1"></div>
@@ -38,7 +42,12 @@
           <li>Priscila Sena</li>
         </div>
       </div>
+      <div id="mensagem" class="caixa-mensagem" style="display: none;">
+  <p id="textoMensagem"></p>
+  <button onclick="location.reload()">Jogar Novamente</button>
+</div>
     </div>
     <script src="script.js"></script>
+    </div>
   </body>
 </html>
