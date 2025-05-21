@@ -85,7 +85,7 @@ button:disabled {
 
 #reiniciar{
     background-color: #164194;
-     width: 10vw;
+     width: 15vw;
 }
 
 .nomes{
@@ -143,9 +143,11 @@ button:disabled {
     display: flex;
     width: 150px;
     height: 150px;
-    margin-top:-60px;
+    margin-top:-40px;
+    margin-left: 200px;
    
 }
 .teste{
     margin-top: -80px;
+
 }
