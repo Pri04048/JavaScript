@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contagem Regressiva para as Olimpíadas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <img src="img.png">
+  <h1>Contagem Regressiva para as Olimpíadas</h1>
+  <div id="contador">
+    <p id="dias"></p>
+    <p id="horas"></p>
+    <p id="minutos"></p>
+    <p id="segundos"></p>
+  </div>
+
+  <div id="progresso">
+    <div id="barra"></div>
+  </div>
+
+  <p id="mensagem-final"></p>
+
+  <audio id="som">
+    <source src="som/happy-logo-13397.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+
+    const dataAlvo = new Date(2028, 3, 9); 
+    const dataInicio = new Date(); 
+    const total = dataAlvo - dataInicio; 
+
+    function atualizarContador() {
+      const agora = new Date();
+      const restante = dataAlvo - agora;
+
+      if (restante <= 0) {
+        document.getElementById("contador").innerHTML = "";
+        document.getElementById("mensagem-final").textContent = "🎉 Começou!";
+        document.getElementById("barra").style.width = "100%";
+        document.getElementById("som").play
+
+        // Tocar som
+        const som = document.getElementById("som");
+        som.play().catch(e => console.warn("Erro ao tocar som:", e));
+
+        clearInterval(intervalo);
+        return;
+      }
+
+      const dias = Math.floor(restante / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((restante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((restante % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((restante % (1000 * 60)) / 1000);
+
+      document.getElementById("dias").textContent = `${dias}d`;
+      document.getElementById("horas").textContent = `${horas}h`;
+      document.getElementById("minutos").textContent = `${minutos}m`;
+      document.getElementById("segundos").textContent = `${segundos}s`;
+
+      const percentual = Math.min(100, Math.max(0, ((total - restante) / total) * 100));
+      document.getElementById("barra").style.width = percentual + "%";
+    }
+
+    atualizarContador();
+    const intervalo = setInterval(atualizarContador, 1000);
+  </script>
+</body>
+</html>
