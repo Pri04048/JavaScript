@@ -1,0 +1,107 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #FFF0F4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+   
+    background-image: url(Design\ sem\ nome\ \(11\).png);
+}
+
+.container {
+  max-width: 600px;
+  margin: 1.5rem auto; 
+  padding: 1.5rem;
+  background: #F49AA2;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+h1 {
+  font-size: 1.8rem; 
+  color: #fff;
+  text-align: center;
+  margin-bottom: 1rem; 
+}
+
+.formulario input,
+.formulario button {
+    width: 100%;
+    padding: 0.7rem;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.formulario input {
+    background-color: #FFE6EC;
+}
+
+.formulario button {
+    background-color: #E37083;
+    color: white;
+    cursor: pointer;
+}
+
+.lista-itens {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.lista-itens li {
+    background-color: #FCCD86;
+    padding: 0.7rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+}
+
+.totais {
+    background-color: #A8BF8A;
+    padding: 1rem;
+    border-radius: 8px;
+    color: #fff;
+    margin-top: 1rem;
+}
+
+.totais input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+    border: none;
+}
+
+.totais button {
+    margin-top: 0.5rem;
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 6px;
+    background-color: #89B7C2;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.brinde {
+    margin-top: 1rem;
+    background-color: #fff;
+    padding: 1rem;
+    border: 2px dashed #E37083;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #E37083;
+    display: none;
+}
+
+.limpar {
+    background-color: #ccc;
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}

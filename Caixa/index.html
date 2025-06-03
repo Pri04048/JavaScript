@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixinha de Brinquedos </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>🎠 Loja de Brinquedos</h1>
+
+        <section class="formulario">
+            <input list="brinquedos" id="produto" placeholder="Nome dos brinquedo 🎁">
+                <datalist id="brinquedos">
+                <option value="Carrinho🚗">
+                <option value="Boneca🪆">
+                <option value="Quebra-cabeça🧩">
+                <option value="Lego🪢">
+                <option value="Jogo da Memória📝">
+                <option value="Bola de Futebol⚽">
+                <option value="Robô Interativo🤖">
+                <option value="Kit de Pintura🎨">
+                </datalist>
+            <input type="number" id="valor" placeholder="Preço (R$)">
+            <input type="number" id="quantidade" placeholder="Qtd.">
+            <button onclick="adicionarItem()">➕ Adicionar</button>
+        </section>
+
+        <ul id="listarItens" class="lista-itens"></ul>
+
+        <div class="totais">
+            <p>Total: <strong>R$ <span id="total">0.00</span></strong></p>
+            <input type="number" id="valorPago" placeholder="Valor pago (R$)">
+            <p>Troco: <strong>R$ <span id="troco">0.00</span></strong></p>
+            <button onclick="calcularTroco()">💰 Calcular Troco</button>
+        </div>
+
+        <div id="brinde" class="brinde"></div>
+
+        <button onclick="limparTudo()" class="limpar">🧼 Limpar Tudo</button>
+    </main>
+
+  <script>
+    let total = 0;
+    let itensAdicionados = 0;
+
+    function adicionarItem() {
+      const produto = document.getElementById("produto").value.trim();
+      const valor = parseFloat(document.getElementById("valor").value);
+      const quantidade = parseInt(document.getElementById("quantidade").value);
+
+      if (!produto || isNaN(valor) || isNaN(quantidade)) {
+        alert("Preencha todos os campos corretamente!");
+        return;
+      }
+
+      const subtotal = valor * quantidade;
+      total += subtotal;
+      itensAdicionados += quantidade;
+
+      const lista = document.getElementById("listarItens");
+      const item = document.createElement("li");
+      item.textContent = `${produto} 🧸 - R$${valor.toFixed(2)} x ${quantidade} = R$${subtotal.toFixed(2)}`;
+      lista.appendChild(item);
+
+      document.getElementById("total").textContent = total.toFixed(2);
+      document.getElementById("produto").value = "";
+      document.getElementById("valor").value = "";
+      document.getElementById("quantidade").value = "";
+
+      if (itensAdicionados >= 3) {
+        const brinde = document.getElementById("brinde");
+        brinde.style.display = "block";
+        brinde.innerHTML = "🎉 Você ganhou um brinde surpresa: Mini Robô 🤖!";
+      }
+    }
+
+    function calcularTroco() {
+      const valorPago = parseFloat(document.getElementById("valorPago").value);
+      if (isNaN(valorPago)) {
+        alert("Informe o valor pago pelo cliente.");
+        return;
+      }
+      const troco = valorPago - total;
+      document.getElementById("troco").textContent = troco >= 0 ? troco.toFixed(2) : "0.00";
+    }
+
+    function limparTudo() {
+      document.getElementById("listarItens").innerHTML = "";
+      document.getElementById("total").textContent = "0.00";
+      document.getElementById("troco").textContent = "0.00";
+      document.getElementById("valorPago").value = "";
+      document.getElementById("brinde").style.display = "none";
+      total = 0;
+      itensAdicionados = 0;
+    }
+  </script>
+</body>
+</html>
