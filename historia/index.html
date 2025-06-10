@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>História Interativa</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>História Interativa - Livro Mágico</title>
+  
+ <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>A Floresta</h1>
+  <h1>📖 O Livro que Muda a Realidade</h1>
   <div id="historia">
-    <p>Você está na frente de uma floresta. Deseja continuar?</p>
-    <button onclick="escolha1('sim')">Entrar na Floresta</button>
-    <button onclick="escolha1('nao')">Voltar para casa</button>
+    <p>Você encontrou um livro antigo empoeirado. Ao abrir, percebe que as palavras mudam conforme você lê. Quer começar a ler? 📚✨</p>
+    <button onclick="escolha1('sim')">Sim, ler o livro</button>
+    <button onclick="escolha1('nao')">Não, fechar o livro</button>
   </div>
 
   <script>
@@ -18,46 +20,178 @@
       const div = document.getElementById("historia");
       if (resposta === "sim") {
         div.innerHTML = `
-          <p>Você encontra dois caminhos. Qual deseja seguir?</p>
-          <button onclick="escolha2('esquerda')">Caminho da esquerda</button>
-          <button onclick="escolha2('direita')">Caminho da direita</button>
+          <p>As páginas começam a brilhar e você é transportado para uma sala misteriosa com duas portas. Qual porta você escolhe? 🚪🚪</p>
+          <button onclick="escolha2('esquerda')">Porta da esquerda 🟩</button>
+          <button onclick="escolha2('direita')">Porta da direita 🟥</button>
         `;
       } else {
-        div.innerHTML = `<p>Você foi para casa.</p>`;
+        div.innerHTML = `<p>Você decide que alguns mistérios devem permanecer fechados. O livro se fecha sozinho. FIM. 📕</p>`;
       }
     }
 
-    function escolha2(caminho) {
+    function escolha2(porta) {
       const div = document.getElementById("historia");
-      if (caminho === "esquerda") {
+      if (porta === "esquerda") {
         div.innerHTML = `
-          <p>Você encontra um dragão. O que vai fazer?</p>
-          <button onclick="escolha3('lutar')">Lutar</button>
-          <button onclick="escolha3('fugir')">Fugir</button>
+          <p>Você entra na porta esquerda e encontra uma biblioteca mágica com livros voadores. Quer pegar um livro para ler? 📚✨</p>
+          <button onclick="escolha3('pegar')">Sim, pegar um livro voador</button>
+          <button onclick="escolha3('ignorar')">Não, seguir em frente</button>
         `;
       } else {
         div.innerHTML = `
-          <p>Você encontra um baú. Deseja abrir?</p>
-          <button onclick="escolha3('abrir')">Abrir</button>
-          <button onclick="escolha3('ignorar')">Ignorar</button>
+          <p>Você entra na porta direita e está em um jardim encantado onde tudo parece vivo. Deseja explorar as flores brilhantes? 🌸🌟</p>
+          <button onclick="escolha3('explorar')">Sim, explorar as flores</button>
+          <button onclick="escolha3('caminhar')">Não, caminhar pelo jardim</button>
         `;
       }
     }
 
     function escolha3(acao) {
       const div = document.getElementById("historia");
-      switch (acao) {
-        case "lutar":
-          div.innerHTML = `<p>Você venceu. Parabéns!</p>`;
-          break;
-        case "fugir":
-          div.innerHTML = `<p>Você fugiu e chegou na entrada da floresta. FIM</p>`;
-          break;
-        case "abrir":
-          div.innerHTML = `<p>No baú tinha um tesouro, você agora está rico. FIM</p>`;
+      switch(acao) {
+        case "pegar":
+          div.innerHTML = `
+            <p>O livro voador sussurra segredos e te oferece dois caminhos: mergulhar na história de um mago poderoso ou de uma aventura pelo tempo. Qual escolhe? 🧙‍♂️⏳</p>
+            <button onclick="escolha4('mago')">História do mago</button>
+            <button onclick="escolha4('aventura')">Aventura pelo tempo</button>
+          `;
           break;
         case "ignorar":
-          div.innerHTML = `<p>Você caminhou e chegou na entrada da floresta. FIM</p>`;
+          div.innerHTML = `
+            <p>Ao ignorar os livros, uma sombra aparece e te desafia para um enigma. Aceita o desafio? 🕵️‍♀️❓</p>
+            <button onclick="escolha4('aceitar')">Aceitar</button>
+            <button onclick="escolha4('recusar')">Recusar</button>
+          `;
+          break;
+        case "explorar":
+          div.innerHTML = `
+            <p>As flores começam a sussurrar e uma delas te oferece um cristal mágico. Você aceita? 💎🌸</p>
+            <button onclick="escolha4('aceitar_cristal')">Aceitar o cristal</button>
+            <button onclick="escolha4('recusar_cristal')">Recusar</button>
+          `;
+          break;
+        case "caminhar":
+          div.innerHTML = `
+            <p>Ao caminhar, você encontra uma fonte que promete realizar um desejo. O que deseja? 🧞‍♂️💧</p>
+            <button onclick="escolha4('poder')">Poder</button>
+            <button onclick="escolha4('sabedoria')">Sabedoria</button>
+          `;
+          break;
+      }
+    }
+
+    function escolha4(opcao) {
+      const div = document.getElementById("historia");
+      switch(opcao) {
+        case "mago":
+          div.innerHTML = `
+            <p>Você é transportado para a torre do mago, que oferece uma escolha: aprender magia ou dominar a escuridão. Qual escolhe? ✨🌑</p>
+            <button onclick="escolha5('magia')">Aprender magia</button>
+            <button onclick="escolha5('escuridao')">Dominar a escuridão</button>
+          `;
+          break;
+        case "aventura":
+          div.innerHTML = `
+            <p>Você viaja no tempo para dois momentos: uma era de paz ou uma batalha épica. Para onde vai? 🕰️⚔️</p>
+            <button onclick="escolha5('paz')">Era de paz</button>
+            <button onclick="escolha5('batalha')">Batalha épica</button>
+          `;
+          break;
+        case "aceitar":
+          div.innerHTML = `
+            <p>Você aceita o desafio do enigma. Ele pergunta: "O que sempre cresce, mas nunca encolhe?" Qual sua resposta? 🤔</p>
+            <button onclick="escolha5('idade')">Idade</button>
+            <button onclick="escolha5('árvore')">Árvore</button>
+          `;
+          break;
+        case "recusar":
+          div.innerHTML = `
+            <p>Você recusa o desafio e a sombra desaparece, deixando um caminho iluminado. Segue por ele? 🚶‍♂️💡</p>
+            <button onclick="escolha5('seguir')">Sim, seguir o caminho</button>
+            <button onclick="escolha5('voltar')">Não, voltar</button>
+          `;
+          break;
+        case "aceitar_cristal":
+          div.innerHTML = `
+            <p>O cristal concede a habilidade de controlar o tempo. Você para para usar esse poder ou continuar explorando? ⏳💎</p>
+            <button onclick="escolha5('usar_poder')">Usar o poder</button>
+            <button onclick="escolha5('explorar_mais')">Explorar mais</button>
+          `;
+          break;
+        case "recusar_cristal":
+          div.innerHTML = `
+            <p>Você recusa o cristal e as flores se transformam em uma ponte mágica para outro mundo. Atravessa? 🌉🌌</p>
+            <button onclick="escolha5('atravessar')">Sim</button>
+            <button onclick="escolha5('ficar')">Não</button>
+          `;
+          break;
+        case "poder":
+          div.innerHTML = `
+            <p>O desejo por poder te faz crescer uma armadura mágica. Usá-la para proteger ou dominar? 🛡️👑</p>
+            <button onclick="escolha5('proteger')">Proteger</button>
+            <button onclick="escolha5('dominar')">Dominar</button>
+          `;
+          break;
+        case "sabedoria":
+          div.innerHTML = `
+            <p>Você adquire um livro de sabedoria infinita. Vai ler ou guardar para depois? 📜🤓</p>
+            <button onclick="escolha5('ler')">Ler agora</button>
+            <button onclick="escolha5('guardar')">Guardar para depois</button>
+          `;
+          break;
+      }
+    }
+
+    function escolha5(decisao) {
+      const div = document.getElementById("historia");
+      switch(decisao) {
+        case "magia":
+          div.innerHTML = `<p>Você domina a magia e se torna guardião do livro. A realidade está em suas mãos. Parabéns! 🧙‍♂️✨ FIM.</p>`;
+          break;
+        case "escuridao":
+          div.innerHTML = `<p>A escuridão te consome, e o livro fecha para sempre. Talvez outra vez. 🌑📕 FIM.</p>`;
+          break;
+        case "paz":
+          div.innerHTML = `<p>Você vive uma vida tranquila e descobre que a paz é o maior poder. 💖🌿 FIM.</p>`;
+          break;
+        case "batalha":
+          div.innerHTML = `<p>Você luta bravamente e altera o curso da história. Herói do tempo! ⚔️⏳ FIM.</p>`;
+          break;
+        case "idade":
+          div.innerHTML = `<p>Resposta correta! A sombra sorri e te deixa passar. Você continua a aventura. 🌟📖 FIM.</p>`;
+          break;
+        case "árvore":
+          div.innerHTML = `<p>Resposta errada! A sombra desaparece e o livro se fecha. Tente novamente. 📕❌ FIM.</p>`;
+          break;
+        case "seguir":
+          div.innerHTML = `<p>O caminho leva a um portal que te traz de volta para casa, mas com novas memórias incríveis. 🏡✨ FIM.</p>`;
+          break;
+        case "voltar":
+          div.innerHTML = `<p>Você volta e o livro desaparece misteriosamente. Outra aventura te espera em outro momento. 📚🌌 FIM.</p>`;
+          break;
+        case "usar_poder":
+          div.innerHTML = `<p>Você usa o poder do tempo para consertar erros do passado e cria um futuro brilhante. ⏳🌞 FIM.</p>`;
+          break;
+        case "explorar_mais":
+          div.innerHTML = `<p>Ao explorar mais, encontra um portal para mundos infinitos. A aventura nunca termina! 🌌🚀 FIM.</p>`;
+          break;
+        case "atravessar":
+          div.innerHTML = `<p>Você atravessa a ponte e descobre um mundo novo cheio de magia e mistérios. 🌉✨ FIM.</p>`;
+          break;
+        case "ficar":
+          div.innerHTML = `<p>Você decide ficar e o jardim se torna seu refúgio secreto para sempre. 🌸🏡 FIM.</p>`;
+          break;
+        case "proteger":
+          div.innerHTML = `<p>Usa sua armadura para proteger os inocentes e se torna um lendário herói. 🛡️💚 FIM.</p>`;
+          break;
+        case "dominar":
+          div.innerHTML = `<p>O desejo de dominar te deixa sozinho e triste, enquanto o livro volta ao seu estado original. 😔📕 FIM.</p>`;
+          break;
+        case "ler":
+          div.innerHTML = `<p>Ao ler o livro, você ganha sabedoria infinita e o poder de mudar qualquer história. 📜🌟 FIM.</p>`;
+          break;
+        case "guardar":
+          div.innerHTML = `<p>Você guarda o livro para outro dia, mas a curiosidade nunca desaparece. Outra aventura te espera. 🤫📚 FIM.</p>`;
           break;
       }
     }
