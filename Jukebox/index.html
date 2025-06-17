@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Jukebox</h1>
+    <p>Selecione como está se sentindo e ouça uma música</p>
+
+        <button onclick="tocar('feliz')">Alegria</button>
+        <button onclick="tocar('triste')">Triste</button>
+        <button onclick="tocar('romantico')">Romântico(a)</button>
+        <button onclick="tocar('medo')">Medo</button>
+        <button onclick="tocar('calmo')">Calmo(a)</button>
+        <button onclick="tocar('aventura')">Aventura</button>
+        <button onclick="tocar('animado')">Animado(a)</button>
+        <button onclick="tocar('tensao')">Tensão</button>
+        <button onclick="parar()">Parar</button>
+    
+
+
+    <div id="imagem" style="margin-top: 30px;">
+    <img src="" alt="" id="foto" width="300" style="display: none;">
+    </div>
+
+    <audio src="" id="audio" controls style="margin-top: 20px; display: none;"></audio>
+    <script>
+        function tocar(tipo){
+            const audio = document.getElementById("audio")
+            const foto = document.getElementById("foto")
+
+            let musica = ""
+            let imagem = ""
+            let cor = ""
+
+            if(tipo == "feliz"){
+                musica = "https://rr4---sn-a5mlrnll.googlevideo.com/videoplayback?expire=1750186927&ei=T2dRaMjpH_6FsvQPstup6Ao&ip=176.1.136.99&id=o-ALPAYa6xEzYemm0_CjY5oSA2j0jzQOMLpcPeFdsYYae5&itag=600&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&bui=AY1jyLMiHPT2TrhROkFHXLrMBp-jcdhLwzkH92qsAO0D9PmL6LtuIVrNzQn2lV5Xp745n4QO35GwMosF&spc=l3OVKZD5COzxyb4vpRMIKMdNLdxqRPQbNW3l5Jey8LYpZh71Izta&vprv=1&svpuc=1&mime=audio%2Fwebm&ns=e6VquknheayvBhRCD7fZYZYQ&rqh=1&gir=yes&clen=880095&dur=192.921&lmt=1723034633611794&keepalive=yes&fexp=24350590,24350737,24350827,24350961,24351173,24351316,24351318,24351495,24351528,24351759,24351828,24351907,24352022,24352102,24352188,24352220,24352236,51331020,51466697&c=MWEB&sefc=1&txp=4532434&n=T44dd_x7JhR9pg&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRQIgeOwkjbsCTXSF9FnZUlm3BrUvgWIpjflz1CJHyHCfEtkCIQDebkoENU8vpe9DkdPpuqL66sVrzPF-qnXexAI_Auo5_A%3D%3D&pot=MnRPARwC_ijd30891bxlOzWZWLh3n4gwAWPRCkghgqzbMvumdI6LAaptiNA_gW1oFHBXN4xtXW3jCkyDI1EYCA5lsP2OIY5RZ4HTVUpNJco2WSqb9-ojdhQ5KxK9j0eVSBIiNQ5nMSkDzPSD-30huWooz1IdhQ==&title=Bruno%20Mars%20-%20Count%20on%20Me%20(Official%20Lyric%20Video)&rm=sn-uxax4vopj5qx-q0n67e,sn-4g5ekz7l&rrc=79,104&req_id=dcca7e626c43a3ee&rms=rdu,au&redirect_counter=2&cms_redirect=yes&cmsv=e&ipbypass=yes&met=1750167666,&mh=BB&mip=201.63.217.82&mm=29&mn=sn-a5mlrnll&ms=rdu&mt=1750166808&mv=D&mvi=4&pl=0&lsparams=ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=APaTxxMwRQIgArx1sNnD5vn32uqGd9LtMDBRPtv0T6aVYglXGolTYJgCIQDSrIF0jEa0w0lx83SZN1R4rE1k-D_C3Gq61Ruyf9guDA%3D%3D"
+                imagem = "https://png.pngtree.com/png-clipart/20230810/original/pngtree-happy-emoji-emoticon-showing-double-thumbs-up-like-picture-image_7851906.png"
+                cor = "#fef59c"
+                 
+            }
+            if(tipo == "triste"){
+                musica = "  https://rr3---sn-bg0e6nle.googlevideo.com/videoplayback?expire=1750183898&ei=eltRaM2IB_C3kucPyN7MoA8&ip=62.164.228.95&id=o-AFrNtUeB0_VwTmBtSlWXhFvRSoGl2c0af-oLWsFWrwzj&itag=249&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&bui=AY1jyLPfI9U6TlT2C2zgSiFjKXC2ThKjdZGKYjku9KdGvzmXViq5sdgadaiTVnJne5v-e8a6sUSIBPGj&vprv=1&svpuc=1&mime=audio%2Fwebm&ns=myTDXxc4uPv3cQWPKwfuX7QQ&rqh=1&gir=yes&clen=123356&dur=16.961&lmt=1622949456071533&keepalive=yes&lmw=1&c=TVHTML5&sefc=1&txp=6311224&n=W4ZdCemve5Zl7g&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRQIhAKRaFgtypd_y5WXowSpabAASlhyJmnaNIqWbANCIEpYRAiA7IEkG9rs9ywbEzrYEbjzJyahWDlmOgAkCHXAgUBypUQ%3D%3D&cm2rm=sn-p5qel77l&rrc=80,104&fexp=24350590,24350737,24350827,24350961,24351173,24351316,24351318,24351495,24351528,24351759,24351907,24352012,24352022,24352102,24352188,24352220,24352236&req_id=a103cfe32f8ea3ee&rms=ltu,au&redirect_counter=2&rm=sn-bg0esy7s&cms_redirect=yes&cmsv=e&ipbypass=yes&met=1750162314,&mh=cU&mip=201.63.217.82&mm=34&mn=sn-bg0e6nle&ms=ltu&mt=1750161880&mv=m&mvi=3&pl=16&lsparams=ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=APaTxxMwRAIgZSnj3TuCs1-oKu8pfAzngXMSES_2EEeGd3SLjxLnE_0CICtOhOgz8Lf7PNHFwpFAIMCq7eb-qUkSRSox3p1TWrCl"
+                imagem = "https://png.pngtree.com/png-vector/20240731/ourmid/pngtree-sad-emoji-png-image_13316932.png"
+                cor = "#90CAF9"
+                 
+            }
+
+            if(tipo == "romantico"){
+                musica = "https://rr1---sn-bg0s7n7z.googlevideo.com/videoplayback?expire=1750187082&ei=6mdRaNiLDMfxi9oPqI250A4&ip=176.1.146.105&id=o-AKJI0dSx8pEwExLMSIePrgraWtkKrFcSBDA1meY7dh6L&itag=249&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&bui=AY1jyLORDZj2bfhMYS57o6n4IgP5iyodbLbQvcueb0S2OGqP35BtApWMba_bTth4K2lNRnG0ia0XvG0C&spc=l3OVKYVPkdxsKFjCiS9oTCvz50OenNsMHnrKJAabhCh8Py-WXpqB&vprv=1&svpuc=1&mime=audio%2Fwebm&ns=xOjF6PthlV5P8HgIKWdRq-sQ&rqh=1&gir=yes&clen=1882565&dur=278.881&lmt=1713633171313965&keepalive=yes&fexp=24350590,24350737,24350827,24350961,24351173,24351316,24351318,24351495,24351528,24351759,24351907,24352022,24352102,24352188,24352220,24352236,51331020,51514993&c=MWEB&sefc=1&txp=4532434&n=mqWzi-K5QLc7MA&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRQIgZgZH-aRscXvFnLZHAVZHRSn6m3eoWH-An4cZHq1OEh4CIQCKR0NlSqZqznqh6s_5yuqRl8HIRAV16cTvCcTIveG8zA%3D%3D&pot=MnS2kG2MFfRMRrasFoUH4Ana3o2qe_Srtxz3Kaf3VFxv3Oy08wPRE3s6_guvslZkkulIse3zj3w7x90iOQiRS--qh_SsGl2GXUVowm1sGjf8yITL-524K9YUdITQgCVEPnmdcKH9-gv_H-Fr8AYXW4CyBDwX-w==&title=Portugal%20-%20Kawe%20&%20Ananda%20(%20Prod.%20Jay%20=&%20Cita%20)%20Original%20Quality=&rm=sn-uxax4vopj5qx-q0n676&rrc=79,80&req_id=f2801fbc8623a3ee&redirect_counter=2&cm2rm=sn-4g5ezy76&cms_redirect=yes&cmsv=e&met=1750166610,&mh=52&mip=201.63.217.82&mm=34&mn=sn-bg0s7n7z&ms=ltu&mt=1750165990&mv=u&mvi=1&pl=16&rms=ltu,au&lsparams=met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=APaTxxMwRgIhAJr83ZJPPZmLnPhRWbr10KCJdXUjG6QIl7lrTk2R0TbEAiEAtqRLVVUq9WWty099IjEH7UIjpLFBBfsG4UxPwRK6mAI%3D"
+                imagem = "https://preview.redd.it/does-anyone-know-the-phonk-cover-with-the-emoji-romantic-v0-383rzt9gm43d1.png?width=512&format=png&auto=webp&s=2231340b147b0bc1d1fc206e50b6ce26d4a2888d"
+                cor = "#FDE5EC"
+                
+                 
+            }
+            
+            if(tipo == "medo"){
+                musica = "  https://rr5---sn-bg0e6ner.googlevideo.com/videoplayback?expire=1750187672&ei=OGpRaNOGHuuFsvQPk725yQo&ip=176.1.146.61&id=o-AE3FWqK1w2Db8aXShqJPyPgNs4OZQdcPta3P84vqNaBQ&itag=249&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&bui=AY1jyLMDLGBYo5tu_tHwZ9UD6qrPOHdClcNoC2DYGMA1siEGeO44ry_HfVXyrSIbVYbdFU581sjAGXzy&spc=l3OVKamOneYLPg-bvxHFDk7T5YlGJvMVo7JQOuJhH_ES4ySOJPan&vprv=1&svpuc=1&mime=audio%2Fwebm&ns=vCZMy33FIliP5PCYmN1W0rQQ&rqh=1&gir=yes&clen=426986&dur=66.361&lmt=1672886155477433&keepalive=yes&fexp=24350590,24350737,24350827,24350961,24351173,24351316,24351318,24351495,24351528,24351759,24351907,24352022,24352102,24352188,24352220,24352236,51331020,51466697&c=MWEB&sefc=1&txp=5318224&n=b5EZbS0hcqpudg&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRQIhAJ0SkexaZGi1wrXLiZ2xs2CgDRZbUQ0REoyBzglfgoAKAiAsYBQzvmN1K3LpZBfrSNdUhudghWtAFiZ_XNlasATYEQ%3D%3D&pot=MnQtaxlAA1mGRC1XXTmNGtqYzdpLICGAaS7GmWFIzmjlm-PydBfRLZvH93yYCX7uXVeoT8HX1-GHh_QHcoz1CLRlzacjN2AIoGUzzIdNnmmdansR6-0thk3yMuq2nWx6k9cTUU9Vy107gsI5FsRU8Vf6QrZE5A==&title=RISADA%20ASSUSTADORA%20|%20RISADAS%20ASSUSTADORAS%20|%20RISADA%20DE%20TERROR%20|%20RISADA%20MACABRA&rm=sn-uxax4vopj5qx-q0n67d,sn-bg0esd76&rrc=79,80,104&req_id=2d0a97d41ea4a3ee&cm2rm=sn-4g5ekl7e&rms=ltu,au&redirect_counter=3&cms_redirect=yes&cmsv=e&ipbypass=yes&met=1750166121,&mh=XC&mip=200.212.26.114&mm=34&mn=sn-bg0e6ner&ms=ltu&mt=1750165723&mv=m&mvi=5&pl=23&lsparams=ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=APaTxxMwRAIgPJwqe3M3ugcv6xDCiNiFln1wHfGuTCoaqA89Y1ghRIoCIDwaWJRwFU3ZApzjY8TKbdjXI-OO9ZmgBxHzZRI4L0uL"
+                imagem = "https://symbl-cdn.com/i/webp/d6/8afe6b0c9f1fd20a34ad76ffbfaff0.webp"
+                cor = "#4c4d4c"
+                
+                 
+            }
+            
+            if(tipo == "calmo"){
+                musica = "  https://rr4---sn-bg0e6nez.googlevideo.com/videoplayback?expire=1750188781&ei=jW5RaN6qI_agzPsP6duYsQg&ip=176.6.134.158&id=o-ALKjkF2KT2c_8FWSWjLssc_4--psWtLapKNzzRQVK6-o&itag=600&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&ctier=SH&bui=AY1jyLO1gUGr56qbcBJOtoJbKPLLqlLQDeW2q_heXlhvGFJN0UuY38DfAYvWaEigbfY6TJQK8F5LuGc8&spc=l3OVKSzOJ-2vk7qK9wxtfl4Ay-SL6lsgJoM6lzIn7EoTO56WgWB_&vprv=1&svpuc=1&mime=audio%2Fwebm&ns=q7WMmKB3ouyqO3wxORCw5bMQ&rqh=1&gir=yes&clen=332263&dur=56.621&lmt=1748861398035953&keepalive=yes&fexp=24350590,24350737,24350827,24350961,24351173,24351316,24351318,24351495,24351528,24351598,24351759,24351907,24352022,24352102,24352188,24352220,24352236,51331020&c=MWEB&sefc=1&txp=4432534&n=m183rT_TuQV6Gg&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cctier%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRQIhAJTVizN-mlQvVsgAePQVDlAqZR1IfrjbiFLl8nGQqieUAiBF3hwQIMino0RKhJ9h3KlyQDeTfby-3DRk3iRWk3utOQ%3D%3D&pot=MnT0h_QnHA835_S7jFJLwAFZCQKKyDdOtQ-si9KWttL4HZORBgMgWgKfqBG-lOTkh5CeBC-9AC-loOQzXFwDhOIfYs0PytCeejPAH8W2GTTjINHtaFNq9cgMlDUS_h5J-r8aBYcgObWdQBAJ6ddv6vw4XKw89A==&title=Relaxing%20Sleep%20Music%20+%20Insomnia,%20Stress%20Relief,%20Calming%20Music%20&rm=sn-uxax4vopj5qx-cxgz7s&rrc=79,80&req_id=a4e5784c9e7ea3ee&redirect_counter=2&cm2rm=sn-4g5ez67l&cms_redirect=yes&cmsv=e&met=1750167247,&mh=1b&mip=200.212.26.114&mm=34&mn=sn-bg0e6nez&ms=ltu&mt=1750165990&mv=u&mvi=4&pl=23&rms=ltu,au&lsparams=met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=APaTxxMwRAIgf8WqpcsnaRSvBKQrSjIvsVV8MRECA3YuyUoxDZpE5RgCIC861UvbV5cLuWPxzncxFo6BeoJ5zeaKjmSRYPJ2XDo9#relaxing%20#sleepmusic%20#calmingsounds"
+                imagem = "https://images.vexels.com/media/users/3/134436/isolated/preview/2e785703627785742a3e2afe96e9e07c-emoji-calma-emoticon.png"
+                cor = "#81deeb"
+                
+                 
+            }
+            
+            if(tipo == "aventura"){
+                musica = "https://rr3---sn-bg0e6nes.googlevideo.com/videoplayback?expire=1750189356&ei=zHBRaMWFEsKdi9oPweGGuAQ&ip=176.6.134.52&id=o-AKj_avD2kR-anwurD92PLYC4-32hjljhSngpgCbu0pbQ&itag=249&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&bui=AY1jyLOygEEL2qXXuLf2XsQAfDmvKeOhlfNDP8HJCbUG7KlDiGG9RH2IcTaQ45CRMaqM4EcR-5IgSW_a&spc=l3OVKW5VRynbl4NFVgCxAchYn28LhYYb8RNA4xK4u9SaOd1pMC8B&vprv=1&svpuc=1&mime=audio%2Fwebm&ns=M70dv75rBkTnqumaIdsYwYgQ&rqh=1&gir=yes&clen=354375&dur=54.861&lmt=1708739928653998&keepalive=yes&fexp=24350590,24350737,24350827,24350961,24351173,24351316,24351318,24351495,24351528,24351759,24351907,24352022,24352102,24352188,24352220,24352236,24352333,51331020&c=MWEB&sefc=1&txp=4532434&n=W9g-dAg7k8E_3Q&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRAIgTCUWkJgYl7oMQA-vycftZTqkpMIBH_YkGZfC0RhYUAYCIDEDOAjce2QxjnKhdBbkczCv_UkOimOY2lgQMnfwSbo6&pot=MnRRED2zIMzLq1EsCP34FGioE_0tFdEaMoPdF2mskv0dA0eiI9xeCmS7Ey6j5SxvVsgK17M4nC8HZRJXVkXGlF7jWe4qJcpXf3uNln3qCnhv7E2s8RhH4bJ1frpifw1VrL_n9-CBihGoEaM4GwKiVCNoIsEoNA==&title=Dora,%20A%20Aventureira%20|%20M%C3%BAsica%20de%20abertura%20%F0%9F%8E%A4%20|%20Nick%20Jr.&rm=sn-uxax4vopj5qx-cxgd76,sn-4g5ekk7s&rrc=79,104&req_id=a369ebe4adbaa3ee&rms=rdu,au&redirect_counter=2&cms_redirect=yes&cmsv=e&ipbypass=yes&met=1750167762,&mh=Xo&mip=200.212.26.114&mm=29&mn=sn-bg0e6nes&ms=rdu&mt=1750166808&mv=u&mvi=3&pl=23&lsparams=ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=APaTxxMwRQIhAKgfmJ3-9Yg-T99r-WHIzi9QxqM3Xs_ozWZq4CLFuWIWAiAZThar-hhLQS2H0B45XvWnaXhjGXWTOyszGr1wzYrrQQ%3D%3D"
+                imagem = "https://i.pinimg.com/originals/de/b6/0e/deb60ef0ac30b89b69746c6759b1407f.png"
+                cor = "#fde5ec"
+                
+                 
+            }
+            
+            if(tipo == "animado"){
+                musica = "https://rr2---sn-bg0e6ner.googlevideo.com/videoplayback?expire=1750176946&ei=UkBRaMP_G-iH6dsP9qrk0Q4&ip=176.6.139.188&id=o-ANWCs5Sy1YLQ7fa818LnvUVtmqhKEj770IvixmH0MC0Y&itag=250&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&bui=AY1jyLPrnRmyknONtche8uB39WcORuAWPogXwISJCmqT0kLNojOG2yqkXzuX-X4hOv9sH8_CnBwoZsoX&spc=l3OVKY9SBHgnQ-iHXIq18PEHlu_1OcmRTBjNkMXcVY1fnDEj5czl&vprv=1&svpuc=1&mime=audio%2Fwebm&ns=jdOizTrGn1mHHuQJ5TaVTF0Q&rqh=1&gir=yes&clen=2568157&dur=311.541&lmt=1747514625539548&keepalive=yes&fexp=24350590,24350737,24350827,24350961,24351173,24351316,24351318,24351495,24351528,24351759,24351907,24352022,24352102,24352154,24352188,24352220,24352236,51331020,51466698&c=MWEB&sefc=1&txp=5532534&n=ZzMv3uVLvWrkcQ&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRQIhAJvuYO0y4RQkKtKF6pLe9Id0rmUBnlBqaQcnqZF8BXSVAiA6t8YjVu4-uAdA-7JNCziwDMcyb34W-6ziVKjlG21wjQ%3D%3D&pot=MnR6o5jRPkpItnqfHpzpmEanbFgdlQgN29sZYkp6sFj-fLlT2CMxwRbbttyBXCXIsxaslNGLEbya2ULcI5HfCJVeCdAOPnBEIqcUHIV8gxbdI6ISs5eWn9qcDzT90NCsBe8MuHr2zcYFDSfkRdB_MWVEf_hcoQ==&title=Eiffel%2065%20-%20Blue%20(Da%20Ba%20Dee)[Suspence%20Remix]&rm=sn-uxax4vopj5qx-cxge7e,sn-4g5erz7z&rrc=79,104&req_id=850547b3c411a3ee&rms=rdu,au&redirect_counter=2&cms_redirect=yes&cmsv=e&ipbypass=yes&met=1750168478,&mh=A-&mip=200.212.26.114&mm=29&mn=sn-bg0e6ner&ms=rdu&mt=1750166808&mv=u&mvi=2&pl=23&lsparams=ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=APaTxxMwRQIhAL1MGKB-AoxVZ2Euzu9979SVmbke6K8IHgZhW2DdZeylAiBbNViVZfD3rHkHwRlvqwNUtzbCNzH1rrz444Vp62dRnA%3D%3D"
+                imagem = "https://png.pngtree.com/png-clipart/20240806/original/pngtree-excited-emoji-png-image_15717204.png"
+                cor = "#ffaa90"
+                
+                 
+            }
+              if(tipo == "tensao"){
+                musica = "https://rr1---sn-bg0e6n7d.googlevideo.com/videoplayback?expire=1750178833&ei=sUdRaMr5MJPQ6dsPqpjXwAo&ip=176.1.132.33&id=o-AMtoTnqU08LJ4btIIR3w7oMn68_XfQANJn9xrYcfjwM2&itag=250&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&bui=AY1jyLPEpGtVMbpkNpdqkMJ3TnI8Ahutc8ecm64Dn-E9QRCf-YhegQkP6ByNcNYb3wHBz5JgoZI-TYBm&spc=l3OVKTS_YIV4BgG8RZfgVY0ROdWsGw9S5m18HQxzv-ejOMkwE3-g&vprv=1&svpuc=1&mime=audio%2Fwebm&ns=vQnMdU_mf91nOFWG9gC4abAQ&rqh=1&gir=yes&clen=894085&dur=102.481&lmt=1735093212226435&keepalive=yes&fexp=24350590,24350737,24350827,24350961,24351173,24351316,24351318,24351495,24351528,24351759,24351907,24352022,24352102,24352188,24352220,24352236,24352370,51331020&c=MWEB&sefc=1&txp=5532434&n=Y0qDcrSJobW1AA&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRQIgLnNAuNxjnIkasxN8Xf8g2RQJewWfgSU8J1NMcEidzAMCIQCoCRLbpCf4dSStOP7GRvnBUc_gUSdz8v7v0tV25OvD3w%3D%3D&pot=MnQHiX9jmJ_ztwe1GRTYcv48Fbhvtc48NhP60TiCZ2vXFyDWzqcOAv3CbM6R4MTxfsmvR_4MoTPkSH28Zp4r-xmC81924PYdryLyZ033dtq2-MDrs-TdTEcf9gm7ELX0IYldEdlb4DzmSwqUVSa_5vbYADkZ5w==&title=m%C3%BAsica%20de%20(suspense%20)%20sem%20direito%20autorais%20para%20usar%20em%20seus%20v%C3%ADdeos&rm=sn-uxax4vopj5qx-q0n67d,sn-4g5er77l&rrc=79,104&req_id=35b2d29fb611a3ee&rms=rdu,au&redirect_counter=2&cms_redirect=yes&cmsv=e&ipbypass=yes&met=1750168622,&mh=ga&mip=200.212.26.114&mm=29&mn=sn-bg0e6n7d&ms=rdu&mt=1750168326&mv=u&mvi=1&pl=23&lsparams=ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=APaTxxMwRQIgIXwzLHzHsclg1SUKkJadPJLQWFsyfCZrHZTCy2FwwFsCIQCQT_9rcrYnorv_dXaeijZnqhoYAFQSIX0t6bL9Mgx8cg%3D%3D"
+                imagem = "https://png.pngtree.com/png-clipart/20241125/original/pngtree-screaming-in-fear-emoji-png-image_17313678.png"
+                cor = "#e7e6e7"
+                
+                 
+            }
+            document.body.style.backgroundColor = cor
+            foto.src = imagem
+            foto.style.display = "block"
+
+            audio.src = musica
+            audio.play()
+            audio.style.display = "block"
+        }
+        function parar() {
+            const audio = document.getElementById("audio")
+            audio.pause()
+            audio.currenTime = 0
+            audio.style.display = "none"
+
+            const foto = document.getElementById("foto")
+            foto.style.display = "none"
+
+            document.body.style.backgroundColor = "fff"
+        }
+    </script>
+</body>
+</html>
